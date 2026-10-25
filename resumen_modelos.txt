@@ -1,0 +1,59 @@
+RESUMEN DEL PROYECTO DE MACHINE LEARNING
+=============================================
+
+DATASET Y PREPROCESAMIENTO
+Fuente: https://huggingface.co/datasets/methodidacte/penguins
+Filas originales: 344
+Columnas originales: 17
+Filas después de la limpieza: 342
+Columnas seleccionadas: 5
+Filas eliminadas: 2
+Duplicados originales: 0
+Valores faltantes finales: 0
+
+MODELO DE REGRESIÓN LINEAL
+Objetivo: predecir el peso en gramos.
+Variables: Culmen Length (mm), Culmen Depth (mm), Flipper Length (mm)
+Algoritmo: LinearRegression.
+División: 80% entrenamiento y 20% prueba.
+Semilla aleatoria: 42.
+Registros de entrenamiento: 273
+Registros de prueba: 69
+MAE: 282.89 gramos
+RMSE: 349.98 gramos
+R²: 0.7829
+Intercepto: -6233.3410
+Coeficiente de Culmen Length (mm): 2.4640
+Coeficiente de Culmen Depth (mm): 13.1467
+Coeficiente de Flipper Length (mm): 50.2640
+
+Interpretación: R² indica la proporción de variación del peso explicada por el modelo en los datos de prueba.
+
+MODELO DE CLASIFICACIÓN
+Objetivo: predecir la especie.
+Variables: Culmen Length (mm), Culmen Depth (mm), Flipper Length (mm)
+Algoritmo: RandomForestClassifier.
+Parámetro configurado: random_state=42.
+División: 80% entrenamiento y 20% prueba, estratificada.
+Registros de entrenamiento: 273
+Registros de prueba: 69
+Exactitud: 1.0000
+Matriz de confusión:
+[[30  0  0]
+ [ 0 14  0]
+ [ 0  0 25]]
+Reporte de clasificación:
+                                           precision    recall  f1-score   support
+
+      Adelie Penguin (Pygoscelis adeliae)       1.00      1.00      1.00        30
+Chinstrap penguin (Pygoscelis antarctica)       1.00      1.00      1.00        14
+        Gentoo penguin (Pygoscelis papua)       1.00      1.00      1.00        25
+
+                                 accuracy                           1.00        69
+                                macro avg       1.00      1.00      1.00        69
+                             weighted avg       1.00      1.00      1.00        69
+
+CONCLUSIONES Y LIMITACIONES
+Se entrenaron modelos para estimar el peso y clasificar la especie. Los resultados corresponden a una división específica de los datos. Se recomienda evaluar los modelos con validación cruzada y nuevos datos.
+
+Fecha de generación: 2026-10-25 18:15:01

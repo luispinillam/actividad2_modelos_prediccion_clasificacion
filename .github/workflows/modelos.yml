@@ -1,0 +1,33 @@
+name: Ejecutar modelos de pingüinos
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  entrenar-modelos:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar el repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Ejecutar modelos y generar resultados
+        run: python entrenar_modelos.py
+
+      - name: Publicar archivo de resultados
+        uses: actions/upload-artifact@v4
+        with:
+          name: resumen-modelos
+          path: resumen_modelos.txt

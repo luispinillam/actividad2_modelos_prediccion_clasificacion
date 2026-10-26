@@ -22,6 +22,8 @@ Registros de prueba: 69
 MAE: 282.89 gramos
 RMSE: 349.98 gramos
 R²: 0.7829
+Interpretación del MAE: el error absoluto medio es de aproximadamente 282.89 gramos.
+Interpretación del RMSE: el error cuadrático medio expresado en la escala original es de aproximadamente 349.98 gramos. Esta métrica penaliza más los errores grandes.
 Intercepto: -6233.3410
 Coeficiente de Culmen Length (mm): 2.4640
 Coeficiente de Culmen Depth (mm): 13.1467
@@ -31,8 +33,10 @@ Interpretación: R² indica la proporción de variación del peso explicada por 
 
 MODELO DE CLASIFICACIÓN
 Objetivo: predecir la especie.
-Variables: Culmen Length (mm), Culmen Depth (mm), Flipper Length (mm)
 Algoritmo: RandomForestClassifier.
+Parámetro configurado: random_state=42.
+Parámetro n_estimators: 100 árboles (valor predeterminado).
+Otros parámetros: valores predeterminados de Scikit-learn.
 Parámetro configurado: random_state=42.
 División: 80% entrenamiento y 20% prueba, estratificada.
 Registros de entrenamiento: 273
@@ -56,4 +60,4 @@ Chinstrap penguin (Pygoscelis antarctica)       1.00      1.00      1.00        
 CONCLUSIONES Y LIMITACIONES
 Se entrenaron modelos para estimar el peso y clasificar la especie. Los resultados corresponden a una división específica de los datos. Se recomienda evaluar los modelos con validación cruzada y nuevos datos.
 
-Fecha de generación: 2026-10-25 18:15:01
+Fecha de generación: 2026-10-25 19:23:46

@@ -129,7 +129,6 @@ with open("resumen_modelos.txt", "w", encoding="utf-8") as archivo:
     archivo.write("MODELO DE CLASIFICACIÓN\n")
     archivo.write("Objetivo: predecir la especie.\n")
     archivo.write("Algoritmo: RandomForestClassifier.\n")
-    archivo.write("Parámetro configurado: random_state=42.\n")
     archivo.write("Parámetro n_estimators: 100 árboles (valor predeterminado).\n")
     archivo.write("Otros parámetros: valores predeterminados de Scikit-learn.\n")
     archivo.write("Parámetro configurado: random_state=42.\n")

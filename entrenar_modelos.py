@@ -113,6 +113,8 @@ with open("resumen_modelos.txt", "w", encoding="utf-8") as archivo:
     archivo.write(f"MAE: {mae:.2f} gramos\n")
     archivo.write(f"RMSE: {rmse:.2f} gramos\n")
     archivo.write(f"R²: {r2:.4f}\n")
+    archivo.write(f"Interpretación del MAE: el error absoluto medio "f"es de aproximadamente {mae:.2f} gramos.\n")
+    archivo.write(f"Interpretación del RMSE: el error cuadrático medio "f"expresado en la escala original es de aproximadamente "f"{rmse:.2f} gramos. Esta métrica penaliza más los errores grandes.\n")
 
     regresion = modelo_regresion.named_steps["linearregression"]
     archivo.write(f"Intercepto: {regresion.intercept_:.4f}\n")
